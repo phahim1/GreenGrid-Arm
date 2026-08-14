@@ -111,7 +111,11 @@ $$\mathcal{E} = \frac{\int_{0}^{\Delta T} P(t) \, dt}{N_{\text{tokens}}} \quad \
 
 
 
+### 4. Images
 
+<img width="920" height="289" alt="001" src="https://github.com/user-attachments/assets/98284b48-44c3-4186-9c12-944eda6f5dbe" />
 
+<img width="899" height="366" alt="002" src="https://github.com/user-attachments/assets/bd3f1983-0742-4b32-8418-e727d96aa6c4" />
 
+<img width="960" height="490" alt="003" src="https://github.com/user-attachments/assets/d814c284-c2f4-48cf-be52-8930c85a17bb" />
 
