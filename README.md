@@ -107,3 +107,7 @@ $$\mathcal{E} = \frac{\int_{0}^{\Delta T} P(t) \, dt}{N_{\text{tokens}}} \quad \
 
 
 
+
+
+
+
