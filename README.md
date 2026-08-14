@@ -70,6 +70,8 @@ The core analytical engine of **GreenGrid-Arm** evaluates active LLM inference w
 
 ### 1. Energy & Compute Quality Index (ECQI) Formulation
 
+> **Standards Nomenclature Note:** *ECQI is an audit-grade composite index proposed by GreenGrid-Arm that synthesizes underlying ISO/IEC 30134 KPIs (PUE, CUE, ITEUsv) and ISO/IEC 21836 active compute metrics into a single 0–100 workload optimization score.*
+
 The **Energy & Compute Quality Index ($\text{ECQI}$)** outputs an audit-grade rating from $0$ to $100$:
 
 $$\text{ECQI} = w_{\text{SIMD}} \cdot S_{\text{SIMD}} + w_{\text{IPC}} \cdot \left(\frac{\text{IPC}}{\text{IPC}_{\max}} \cdot 100\right) + w_{\mathcal{E}} \cdot f_E(\mathcal{E}) + w_{\mathcal{C}} \cdot f_C(\mathcal{C})$$
