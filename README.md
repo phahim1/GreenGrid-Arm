@@ -29,41 +29,40 @@ As global cloud infrastructure transitions to large language model (LLM) inferen
 
 ## Architecture Blueprint
 
-```text
-+----------------------------------------------------------------+
-|                  GreenGrid-Arm Cloud Instance                  |
-|                     (Arm64 / Neoverse Core)                    |
-+----------------------------------------------------------------+
-                                 |
-         +-----------------------+-----------------------+
-         |                                               |
-         v                                               v
-+-------------------------------+ +------------------------------+
-|     LLM Inference Engine      | | Dynamic Grid Power Telemetry |
-|  (llama.cpp - FP32/FP16/INT4) | | (Grid Carbon Intensity/PUE)|
-+-------------------------------+ +------------------------------+
-         |                                               |
-         +-----------------------+-----------------------+
-                                 |
-                                 v
-+----------------------------------------------------------------+
-|                Arm Performix Hardware Profiler                 |
-|  - SIMD/Vectorization Saturation (Neon/SVE)                    |
-|  - Memory Bandwidth Utilization & Cache Hierarchy Misses       |
-|  - Cycles / Instructions Per Cycle (IPC)                       |
-+----------------------------------------------------------------+
-                                 |
-                                 v
-+----------------------------------------------------------------+
-|               GreenGrid Audit & Analytics Engine               |
-|  - Calculates Energy & Compute Quality Index (ECQI)            |
-|  - Evaluates TTFT, Tokens/Sec, and Energy (Joules/Token)       |
-|  - Generates ISO/IEC/IEEE Standardized Compliance Reports      |
-+----------------------------------------------------------------+
++------------------------------------------------------------+
+|                GreenGrid-Arm Cloud Instance                |
+|                   (Arm64 / Neoverse Core)                  |
++------------------------------------------------------------+
+                              |
+       +----------------------+----------------------+
+       |                                             |
+       v                                             v
++----------------------------+  +----------------------------+
+|    LLM Inference Engine    |  | Dynamic Power Grid Metrics |
+| (llama.cpp - FP32/FP16/INT4|  | (Grid Carbon Intensity/PUE)|
++----------------------------+  +----------------------------+
+       |                                             |
+       +----------------------+----------------------+
+                              |
+                              v
++------------------------------------------------------------+
+|              Arm Performix Hardware Profiler               |
+| - SIMD/Vectorization Saturation (Neon/SVE)                 |
+| - Memory Bandwidth Utilization & Cache Miss Hierarchy      |
+| - Cycles / Instructions Per Cycle (IPC)                    |
++------------------------------------------------------------+
+                              |
+                              v
++------------------------------------------------------------+
+|             GreenGrid Audit & Analytics Engine             |
+| - Calculates Energy & Compute Quality Index (ECQI)         |
+| - Evaluates TTFT, Tokens/Sec, and Joules/Token             |
+| - Generates ISO/IEC/IEEE Standardized Compliance Reports   |
++------------------------------------------------------------+
 
+---
 
-
-## 📐 Mathematical Framework & Metrology
+## Mathematical Framework & Metrology
 
 The core analytical engine of **GreenGrid-Arm** evaluates active LLM inference workloads by performing a weighted multi-objective synthesis of instruction-level microarchitecture efficiency, memory pipeline saturation, token energy intensity, and real-time power grid carbon metrics.
 
