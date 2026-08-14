@@ -29,6 +29,7 @@ As global cloud infrastructure transitions to large language model (LLM) inferen
 
 ## Architecture Blueprint
 
+```text
 +------------------------------------------------------------+
 |                GreenGrid-Arm Cloud Instance                |
 |                   (Arm64 / Neoverse Core)                  |
@@ -59,6 +60,7 @@ As global cloud infrastructure transitions to large language model (LLM) inferen
 | - Evaluates TTFT, Tokens/Sec, and Joules/Token             |
 | - Generates ISO/IEC/IEEE Standardized Compliance Reports   |
 +------------------------------------------------------------+
+```
 
 ---
 
@@ -102,11 +104,6 @@ $$\sum_{i \in \{\text{SIMD}, \text{IPC}, \mathcal{E}, \mathcal{C}\}} w_i = 1.0 \
 The energy draw per generated token ($\mathcal{E}$) is calculated by integrating instantaneous server active power draw $P(t)$ (in Watts) over the token generation window $\Delta T$ (in seconds) divided by total tokens produced $N_{\text{tokens}}$:
 
 $$\mathcal{E} = \frac{\int_{0}^{\Delta T} P(t) \, dt}{N_{\text{tokens}}} \quad \left[\frac{\text{Joules}}{\text{Token}}\right]$$
-
-
-
-
-
 
 
 
