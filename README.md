@@ -87,15 +87,17 @@ Where:
 
   $$f_C(\mathcal{C}) = \max\left(0, \left(1 - \frac{\mathcal{C}}{\mathcal{C}_{\max}}\right)\right) \times 100$$
 
-  *(Where $\mathcal{C}_{\max} = 500.0\text{ gCO}_2/\text{kWh}$ represents the high-fossil grid threshold).*
+   *(Where $\mathcal{C}_{\max} = 500.0\text{ gCO}_2/\text{kWh}$ represents the high-fossil grid threshold).*
 
 ---
-
 ### 2. Standardized Weight Vector ($\sum w_i = 1.0$)
 
-To ensure strict alignment with **ISO/IEC 30134** data center efficiency Key Performance Indicators (PUE, CUE, ITEE), the weighting coefficients are constrained by:
+To ensure strict alignment with **ISO/IEC 30134** data center efficiency Key Performance Indicators (PUE, CUE, ITEE), the weighting coefficients are constrained by $\sum_{i} w_i = 1.0$:
 
-$$\sum_{i \in \{\text{SIMD}, \text{IPC}, \mathcal{E}, \mathcal{C}\}} w_i = 1.0 \quad \implies \quad \begin{matrix} w_{\text{SIMD}} = 0.35 & \text{(Arm Vector Pipe Utilization)} \\ w_{\text{IPC}} = 0.25 & \text{(Pipeline Execution Throughput)} \\ w_{\mathcal{E}} = 0.25 & \text{(Token Energy Intensity)} \\ w_{\mathcal{C}} = 0.15 & \text{(Regional Grid Carbon Intensity)} \end{matrix}$$
+* **$w_{\text{SIMD}} = 0.35$:** Arm Vector Pipe Utilization Weight
+* **$w_{\text{IPC}} = 0.25$:** Pipeline Execution Throughput Weight
+* **$w_{\mathcal{E}} = 0.25$:** Token Energy Intensity Weight
+* **$w_{\mathcal{C}} = 0.15$:** Regional Grid Carbon Intensity Weight
 
 ---
 
