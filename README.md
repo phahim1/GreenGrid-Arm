@@ -30,40 +30,41 @@ As global cloud infrastructure transitions to large language model (LLM) inferen
 ## Architecture Blueprint
 
 ```text
-+-----------------------------------------------------------------------------------+
-|                            GreenGrid-Arm Cloud Instance                            |
-|                            (Arm64 / Neoverse Core)                                |
-+-----------------------------------------------------------------------------------+
-                                          |
-    +-------------------------------------+-------------------------------------+
-    |                                                                           |
-    v                                                                           v
-+----------------------------------------+   +----------------------------------+
-|      LLM Inference Engine              |   |    Dynamic Grid Power Telemetry  |
-|      (llama.cpp - FP32 / FP16 / INT4)  |   |    (Grid Carbon Intensity & PUE) |
-+----------------------------------------+   +----------------------------------+
-    |                                                                           |
-    +-------------------------------------+-------------------------------------+
-                                          |
-                                          v
-+-----------------------------------------------------------------------------------+
-|                        Arm Performix Hardware Profiler                            |
-|    - SIMD/Vectorization Saturation (Neon/SVE)                                     |
-|    - Memory Bandwidth Utilization & Cache Hierarchy Misses                        |
-|    - Cycles / Instructions Per Cycle (IPC)                                        |
-+-----------------------------------------------------------------------------------+
-                                          |
-                                          v
-+-----------------------------------------------------------------------------------+
-|                        GreenGrid Audit & Analytics Engine                         |
-|    - Calculates Energy & Compute Quality Index (ECQI)                             |
-|    - Evaluates TTFT, Tokens/Sec, and Energy Consumption (Joules/Token)            |
-|    - Generates ISO/IEC/IEEE Standardized Compliance Reports                       |
-+-----------------------------------------------------------------------------------+
++----------------------------------------------------------------+
+|                  GreenGrid-Arm Cloud Instance                  |
+|                     (Arm64 / Neoverse Core)                    |
++----------------------------------------------------------------+
+                                 |
+         +-----------------------+-----------------------+
+         |                                               |
+         v                                               v
++-------------------------------+ +------------------------------+
+|     LLM Inference Engine      | | Dynamic Grid Power Telemetry |
+|  (llama.cpp - FP32/FP16/INT4) | | (Grid Carbon Intensity/PUE)|
++-------------------------------+ +------------------------------+
+         |                                               |
+         +-----------------------+-----------------------+
+                                 |
+                                 v
++----------------------------------------------------------------+
+|                Arm Performix Hardware Profiler                 |
+|  - SIMD/Vectorization Saturation (Neon/SVE)                    |
+|  - Memory Bandwidth Utilization & Cache Hierarchy Misses       |
+|  - Cycles / Instructions Per Cycle (IPC)                       |
++----------------------------------------------------------------+
+                                 |
+                                 v
++----------------------------------------------------------------+
+|               GreenGrid Audit & Analytics Engine               |
+|  - Calculates Energy & Compute Quality Index (ECQI)            |
+|  - Evaluates TTFT, Tokens/Sec, and Energy (Joules/Token)       |
+|  - Generates ISO/IEC/IEEE Standardized Compliance Reports      |
++----------------------------------------------------------------+
 
----
+
 
 ## 📐 Mathematical Framework & Metrology
+
 The core analytical engine of **GreenGrid-Arm** evaluates active LLM inference workloads by performing a weighted multi-objective synthesis of instruction-level microarchitecture efficiency, memory pipeline saturation, token energy intensity, and real-time power grid carbon metrics.
 
 ### 1. Energy & Compute Quality Index (ECQI) Formulation
@@ -93,12 +94,7 @@ Where:
 
 To ensure strict alignment with **ISO/IEC 30134** data center efficiency Key Performance Indicators (PUE, CUE, ITEE), the weighting coefficients are constrained by:
 
-$$\sum_{i \in \{\text{SIMD}, \text{IPC}, \mathcal{E}, \mathcal{C}\}} w_i = 1.0 \quad \implies \quad \begin{cases} 
-w_{\text{SIMD}} = 0.35 & \text{(Arm Vector Pipe Utilization)} \\ 
-w_{\text{IPC}} = 0.25 & \text{(Pipeline Execution Throughput)} \\ 
-w_{\mathcal{E}} = 0.25 & \text{(Token Energy Intensity)} \\ 
-w_{\mathcal{C}} = 0.15 & \text{(Regional Grid Carbon Intensity)} 
-\end{cases}$$
+$$\sum_{i \in \{\text{SIMD}, \text{IPC}, \mathcal{E}, \mathcal{C}\}} w_i = 1.0 \quad \implies \quad \begin{cases} w_{\text{SIMD}} = 0.35 & \text{(Arm Vector Pipe Utilization)} \\ w_{\text{IPC}} = 0.25 & \text{(Pipeline Execution Throughput)} \\ w_{\mathcal{E}} = 0.25 & \text{(Token Energy Intensity)} \\ w_{\mathcal{C}} = 0.15 & \text{(Regional Grid Carbon Intensity)} \end{cases}$$
 
 ---
 
@@ -107,5 +103,11 @@ w_{\mathcal{C}} = 0.15 & \text{(Regional Grid Carbon Intensity)}
 The energy draw per generated token ($\mathcal{E}$) is calculated by integrating instantaneous server active power draw $P(t)$ (in Watts) over the token generation window $\Delta T$ (in seconds) divided by total tokens produced $N_{\text{tokens}}$:
 
 $$\mathcal{E} = \frac{\int_{0}^{\Delta T} P(t) \, dt}{N_{\text{tokens}}} \quad \left[\frac{\text{Joules}}{\text{Token}}\right]$$
+
+
+
+
+
+
 
 
