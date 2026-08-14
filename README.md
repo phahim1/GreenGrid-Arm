@@ -61,9 +61,9 @@ As global cloud infrastructure transitions to large language model (LLM) inferen
 |    - Generates ISO/IEC/IEEE Standardized Compliance Reports                       |
 +-----------------------------------------------------------------------------------+
 
+---
 
 ## 📐 Mathematical Framework & Metrology
-
 The core analytical engine of **GreenGrid-Arm** evaluates active LLM inference workloads by performing a weighted multi-objective synthesis of instruction-level microarchitecture efficiency, memory pipeline saturation, token energy intensity, and real-time power grid carbon metrics.
 
 ### 1. Energy & Compute Quality Index (ECQI) Formulation
